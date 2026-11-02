@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="WINVEX — Windows Control Center. Ferramentas de manutenção, diagnóstico e otimização do Windows em uma interface simples.">
+  <title>WINVEX — Windows Control Center</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="WINVEX início">
+      <img src="assets/winvex-mark.svg" alt="" width="38" height="38">
+      <span>WINVEX<small>WINDOWS CONTROL CENTER</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#recursos">Recursos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#versao">Versão Alpha</a>
+      <a href="#faq">Dúvidas</a>
+      <a class="nav-cta" href="#download">Conhecer a Alpha <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> BUILD ALPHA · 0.1.7</div>
+        <h1>Seu Windows.<br><em>Sob seu controle.</em></h1>
+        <p class="hero-lead">Manutenção, diagnóstico e ferramentas para o dia a dia do seu PC em um só lugar. Conheça o WINVEX, um centro de controle pensado para simplificar tarefas técnicas.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#download">Explorar a versão Alpha <span>↗</span></a>
+          <a class="button secondary" href="#recursos">Ver recursos</a>
+        </div>
+        <div class="hero-note"><span class="shield">✓</span> Ferramentas locais · Você decide o que executar</div>
+      </div>
+      <div class="hero-art">
+        <div class="glow"></div>
+        <img class="dashboard-img" src="assets/dashboard-preview.svg" alt="Prévia ilustrativa do painel do WINVEX com módulos de manutenção, diagnóstico e desempenho">
+        <div class="floating-chip chip-top"><span class="chip-dot blue"></span> SYSTEM CONTROL</div>
+        <div class="floating-chip chip-bottom"><span class="chip-dot green"></span> CONTROLE NA SUA MÃO</div>
+      </div>
+    </section>
+
+    <section class="trust-strip section-wrap" aria-label="Características">
+      <div><strong>01</strong><span>Interface centralizada</span></div>
+      <div><strong>02</strong><span>Ferramentas práticas</span></div>
+      <div><strong>03</strong><span>Ações sob confirmação</span></div>
+      <div><strong>04</strong><span>Em evolução contínua</span></div>
+    </section>
+
+    <section class="section-wrap features-section" id="recursos">
+      <div class="section-heading">
+        <div class="eyebrow">O QUE VOCÊ ENCONTRA</div>
+        <h2>Um conjunto de ferramentas.<br><em>Uma experiência mais simples.</em></h2>
+        <p>O WINVEX organiza utilitários de manutenção e diagnóstico para que você encontre o que precisa sem navegar por várias janelas do Windows.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <img src="assets/icon-maintenance.svg" alt="" class="feature-icon">
+          <div class="card-kicker">01 / MANUTENÇÃO</div>
+          <h3>Cuide do sistema</h3>
+          <p>Atalhos e rotinas para limpeza de arquivos temporários, cache selecionado e verificações do Windows.</p>
+          <span class="card-link">Limpeza · SFC · DISM</span>
+        </article>
+        <article class="feature-card">
+          <img src="assets/icon-diagnostics.svg" alt="" class="feature-icon">
+          <div class="card-kicker">02 / DIAGNÓSTICO</div>
+          <h3>Entenda seu PC</h3>
+          <p>Reúna informações do hardware e do sistema, com relatórios complementares quando disponíveis.</p>
+          <span class="card-link">Hardware · MSInfo32 · DxDiag</span>
+        </article>
+        <article class="feature-card">
+          <img src="assets/icon-gaming.svg" alt="" class="feature-icon">
+          <div class="card-kicker">03 / GAMING</div>
+          <h3>Ferramentas para jogos</h3>
+          <p>Acesse opções de energia e rotinas para limpar caches gráficos selecionados.</p>
+          <span class="card-link">Energia · NVIDIA · AMD</span>
+        </article>
+        <article class="feature-card">
+          <img src="assets/icon-network.svg" alt="" class="feature-icon">
+          <div class="card-kicker">04 / REDE E APPS</div>
+          <h3>Gerencie tarefas úteis</h3>
+          <p>Atalhos para ajustes básicos de rede e atualização de aplicativos compatíveis pelo Winget.</p>
+          <span class="card-link">Rede · DNS · Winget</span>
+        </article>
+        <article class="feature-card">
+          <img src="assets/icon-customize.svg" alt="" class="feature-icon">
+          <div class="card-kicker">05 / PERSONALIZAÇÃO</div>
+          <h3>Deixe com seu estilo</h3>
+          <p>Personalize a interface com tema claro ou escuro, diferentes famílias tipográficas e tamanhos de texto.</p>
+          <span class="card-link">Temas · 15 fontes · 10 tamanhos</span>
+        </article>
+        <article class="feature-card feature-card-dark">
+          <div class="card-kicker">FILOSOFIA WINVEX</div>
+          <h3>Você no comando.</h3>
+          <p>O objetivo é centralizar ferramentas e deixar claro o que cada ação faz. Leia as descrições e confirme antes de executar.</p>
+          <div class="mini-orbit"><span>W</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="section-wrap showcase-inner">
+        <div class="showcase-copy">
+          <div class="eyebrow">UMA CENTRAL, VÁRIAS POSSIBILIDADES</div>
+          <h2>Menos procura.<br><em>Mais clareza.</em></h2>
+          <p>Em vez de decorar caminhos e comandos, use uma interface que agrupa ferramentas comuns em categorias. O WINVEX é uma camada de conveniência — os utilitários continuam sendo executados no seu computador.</p>
+          <ul class="check-list">
+            <li>Interface local para Windows</li>
+            <li>Ferramentas nativas e scripts auxiliares</li>
+            <li>Confirmação antes de operações importantes</li>
+          </ul>
+        </div>
+        <div class="showcase-visual">
+          <img src="assets/workspace-preview.svg" alt="Ilustração de uma área de trabalho com janelas de diagnóstico e manutenção do Windows">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap steps-section" id="como-funciona">
+      <div class="section-heading centered">
+        <div class="eyebrow">COMECE EM POUCOS PASSOS</div>
+        <h2>Simples de conhecer.<br><em>Fácil de explorar.</em></h2>
+      </div>
+      <div class="steps">
+        <article><span class="step-number">01</span><h3>Baixe e extraia</h3><p>Obtenha o pacote da versão Alpha e extraia todos os arquivos para uma pasta local.</p></article>
+        <article><span class="step-number">02</span><h3>Abra o WINVEX</h3><p>Execute o arquivo principal e navegue pelas categorias disponíveis.</p></article>
+        <article><span class="step-number">03</span><h3>Leia e confirme</h3><p>Entenda a finalidade de cada ferramenta e autorize somente as ações que desejar.</p></article>
+      </div>
+    </section>
+
+    <section class="release-section" id="versao">
+      <div class="section-wrap release-panel">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> PRIMEIRA BUILD PÚBLICA</div>
+          <h2>WINVEX <em>0.1.7 Alpha</em></h2>
+          <p>Esta é uma versão experimental, derivada da base de ferramentas da linha Win Optimizer Premium. O projeto está em evolução e precisa de testes em diferentes configurações de Windows e hardware.</p>
+          <div class="release-tags"><span>Windows 10</span><span>Windows 11</span><span>Build Alpha</span></div>
+        </div>
+        <div class="release-side">
+          <div class="version-orb">0.1.7<small>ALPHA</small></div>
+          <p>Primeiro passo de uma central de controle em constante evolução.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap download-section" id="download">
+      <div class="download-copy">
+        <div class="eyebrow">EXPLORE O PROJETO</div>
+        <h2>Conheça o WINVEX<br><em>desde a primeira build.</em></h2>
+        <p>Consulte o código-fonte, acompanhe as atualizações e envie feedback pelo repositório do projeto.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/" target="_blank" rel="noopener">Acessar GitHub <span>↗</span></a>
+          <a class="button secondary" href="#faq">Ler os cuidados</a>
+        </div>
+        <small class="link-note">Substitua o link do GitHub pelo endereço oficial do repositório antes de publicar o site.</small>
+      </div>
+      <img class="download-art" src="assets/winvex-mark.svg" alt="Símbolo do WINVEX">
+    </section>
+
+    <section class="section-wrap faq-section" id="faq">
+      <div class="section-heading">
+        <div class="eyebrow">ANTES DE UTILIZAR</div>
+        <h2>Dúvidas <em>frequentes.</em></h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>O WINVEX garante aumento de FPS ou velocidade?</summary><p>Não. O WINVEX oferece ferramentas de manutenção e ajustes, mas não garante aumento de FPS, redução de ping ou melhoria perceptível. Os resultados dependem do computador, dos aplicativos e da configuração do Windows.</p></details>
+        <details><summary>É necessário executar como administrador?</summary><p>Algumas operações exigem privilégios administrativos e podem solicitar confirmação do UAC. Conceda permissão somente quando entender a ação solicitada.</p></details>
+        <details><summary>Esta versão é estável?</summary><p>Não. A versão 0.1.7 é uma Build Alpha experimental. Faça backup dos dados importantes e evite testar em computadores de produção.</p></details>
+        <details><summary>O WINVEX substitui as ferramentas do Windows?</summary><p>Não. Ele organiza o acesso a ferramentas nativas e scripts auxiliares. Os componentes do próprio Windows continuam responsáveis pelas operações de sistema.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-wrap footer-inner">
+      <a class="brand" href="#inicio"><img src="assets/winvex-mark.svg" alt="" width="34" height="34"><span>WINVEX<small>WINDOWS CONTROL CENTER</small></span></a>
+      <p>Uma central de ferramentas para Windows. <span>Build 0.1.7 Alpha</span></p>
+      <a href="#inicio" class="back-top">Voltar ao topo ↑</a>
+    </div>
+    <div class="section-wrap footer-bottom">© 2026 WINVEX. Projeto independente. Windows é uma marca da Microsoft.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
