@@ -249,29 +249,10 @@
 @media(prefers-reduced-motion:reduce){.timeline-section .timeline-content{transition:none!important}.timeline-section .timeline-content:hover{transform:none}}
 
 
-/* WINVEX website 0.3.11 — hero download and current-version actions */
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.hero-actions .button{min-height:48px}
-.hero-actions .hero-download{
-  gap:10px;
-  background:linear-gradient(135deg,#268bd2,#3268ba);
-  color:#fff;
-  border:1px solid #398ed0;
-  box-shadow:0 12px 30px #1677c544;
-}
-.hero-actions .hero-download:hover{
-  box-shadow:0 15px 34px #1677c566;
-  filter:brightness(1.06);
-}
-.hero-download svg{
-  width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
-  stroke-linecap:round;stroke-linejoin:round;
-}
-.hero-actions .button.secondary{
-  background:#111d2b;
-  border:1px solid #344f68;
-}
-@media(max-width:520px){
-  .hero-actions{align-items:stretch}
-  .hero-actions .button{width:100%}
-}
+/* WINVEX 0.3.16 — official stable release presentation */
+.release-eyebrow{color:#70d9a9}
+.release-eyebrow .pulse{background:#70d9a9;box-shadow:0 0 10px #70d9a9}
+.release-panel .release-tags span{border-color:#365674}
+.version-orb small{color:#75d6ad}
+.timeline-current .timeline-content{border-color:#3f8c78;background:radial-gradient(circle at 95% 5%,#1a715533,transparent 42%),linear-gradient(145deg,#142c34,#101b2a)}
+.timeline-current .timeline-marker{background:linear-gradient(145deg,#258b70,#246b62);border-color:#75d6ad;box-shadow:0 0 0 5px #0b1220,0 0 22px #278b7055}
