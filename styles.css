@@ -35,3 +35,243 @@
 .footer-bottom a{color:#8fcaff;text-decoration:none;border-bottom:1px solid #4c83ad}
 .footer-bottom a:hover{color:#fff;border-color:#fff}
 @media(max-width:650px){.timeline-section{padding-top:62px;padding-bottom:70px}.timeline{padding-left:38px;margin-top:28px}.timeline:before{left:13px}.timeline-marker{left:-38px;width:28px;height:28px;font-size:9px}.timeline-content{padding:18px}.timeline-content h3{font-size:17px}.timeline-content p{font-size:11px}}
+
+
+/* WINVEX website 0.3.7 — navigation, direct download and release hover effects */
+.release-panel{position:relative;isolation:isolate;overflow:hidden;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.release-panel::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:1px;background:conic-gradient(from 0deg,transparent 0deg,transparent 245deg,#58baff 285deg,#d2f0ff 302deg,#388ed0 320deg,transparent 350deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;pointer-events:none;z-index:3;transition:opacity .25s ease}
+.release-panel::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse at 50% 50%,#4aaeff22,transparent 68%);opacity:0;pointer-events:none;z-index:-1;transition:opacity .25s ease}
+.release-panel:hover{border-color:#579bd0;box-shadow:0 0 0 1px #4ca9ed22,0 18px 55px #167ac033;transform:translateY(-2px)}
+.release-panel:hover::before{opacity:1;animation:release-border-sweep 3.2s linear infinite}
+.release-panel:hover::after{opacity:1}
+@keyframes release-border-sweep{to{transform:rotate(360deg)}}
+.release-eyebrow .pulse{animation:release-status-pulse 1.45s ease-in-out infinite;will-change:opacity,transform,box-shadow}
+@keyframes release-status-pulse{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 5px #5ed8a2,0 0 12px #5ed8a2aa}50%{opacity:.42;transform:scale(.72);box-shadow:0 0 2px #5ed8a2}}
+@media(hover:none){.release-panel:hover{transform:none}.release-panel:hover::before{animation:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.release-panel,.release-panel::before,.release-panel::after{transition:none!important;animation:none!important}.release-eyebrow .pulse{animation:none!important;opacity:1;transform:none}}
+
+
+/* WINVEX website 0.3.8 — continuous external light trace and rotating version orb */
+.release-panel{
+  overflow:visible;
+  isolation:isolate;
+  border-color:#315b7b;
+  box-shadow:0 0 0 1px #4ca9ed18,0 16px 42px #0003;
+}
+.release-panel > *{position:relative;z-index:1}
+.release-panel::before{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius:19px;
+  padding:2px;
+  background:conic-gradient(from var(--release-angle,0deg),
+    transparent 0deg,
+    transparent 245deg,
+    #3d9de0 275deg,
+    #e0f5ff 292deg,
+    #65c3ff 307deg,
+    transparent 330deg,
+    transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  z-index:2;
+  opacity:.95;
+  animation:release-external-trace 5s linear infinite;
+}
+.release-panel::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:23px;
+  border:1px solid #54b7f033;
+  box-shadow:0 0 18px #329de033,0 0 36px #329de018;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.8;
+}
+@keyframes release-external-trace{
+  from{--release-angle:0deg}
+  to{--release-angle:360deg}
+}
+@property --release-angle{
+  syntax:"<angle>";
+  inherits:false;
+  initial-value:0deg;
+}
+.version-orb{
+  position:relative;
+  isolation:isolate;
+  overflow:visible;
+  border-color:#5487b1;
+  box-shadow:inset 0 0 35px #3489ca33,0 0 35px #3489ca22;
+}
+.version-orb::before{
+  content:"";
+  position:absolute;
+  inset:-7px;
+  border-radius:50%;
+  padding:2px;
+  background:conic-gradient(from var(--orb-angle,0deg),
+    transparent 0deg,
+    transparent 205deg,
+    #398fce 245deg,
+    #e5f7ff 275deg,
+    #64c5ff 300deg,
+    transparent 330deg,
+    transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:version-orb-rotation 3.8s linear infinite;
+  pointer-events:none;
+  z-index:0;
+}
+.version-orb::after{
+  content:"";
+  position:absolute;
+  inset:-9px;
+  border-radius:50%;
+  box-shadow:0 0 16px #56baff44,0 0 30px #258dd822;
+  pointer-events:none;
+  z-index:-1;
+}
+.version-orb small{position:relative;z-index:1}
+@keyframes version-orb-rotation{
+  from{--orb-angle:0deg}
+  to{--orb-angle:360deg}
+}
+@property --orb-angle{
+  syntax:"<angle>";
+  inherits:false;
+  initial-value:0deg;
+}
+.download-button{gap:12px}
+.download-button .download-arrow{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:transform .2s ease;
+}
+.download-button:hover .download-arrow{transform:translateY(2px)}
+@media(hover:hover){
+  .release-panel:hover{transform:translateY(-2px);border-color:#579bd0;box-shadow:0 0 0 1px #4ca9ed22,0 18px 55px #167ac033}
+}
+@media(prefers-reduced-motion:reduce){
+  .release-panel::before,.version-orb::before{animation:none!important}
+  .download-button .download-arrow{transition:none}
+}
+
+
+/* WINVEX website 0.3.9 — refined Alpha card and interactive horizontal timeline */
+.release-panel{overflow:hidden;border-color:#2a4965;box-shadow:none;transform:none}
+.release-panel::before{content:none!important;animation:none!important;opacity:0!important}
+.release-panel::after{
+  inset:0;border-radius:inherit;border:1px solid #4aaeff18;
+  box-shadow:inset 0 0 34px #4aaeff0b,0 0 24px #3489ca10;
+  opacity:.65;z-index:0;transition:opacity .25s ease,box-shadow .25s ease
+}
+.release-panel:hover{transform:none;border-color:#4b8bb9;box-shadow:0 0 0 1px #4ca9ed20,0 12px 38px #167ac022}
+.release-panel:hover::after{opacity:1;box-shadow:inset 0 0 42px #4aaeff14,0 0 30px #3489ca22}
+.version-orb::before{animation:version-orb-rotation 3.8s linear infinite}
+.release-tags{align-items:center}
+.release-download-button{
+ display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 14px;
+ border:1px solid #398ed0;border-radius:22px;background:linear-gradient(135deg,#268bd2,#3268ba);
+ color:#fff;font-size:10px;font-weight:700;box-shadow:0 7px 20px #1677c533;
+ transition:transform .2s ease,box-shadow .2s ease,filter .2s ease
+}
+.release-download-button:hover{transform:translateY(-2px);box-shadow:0 10px 25px #1677c555;filter:brightness(1.08)}
+.release-download-button svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.timeline-section{padding-top:78px;padding-bottom:88px}
+.timeline-interactive{margin-top:36px}
+.timeline-track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:start;gap:0;position:relative;margin:0 0 24px}
+.timeline-track::before{content:"";position:absolute;top:18px;left:8.33%;right:8.33%;height:2px;background:linear-gradient(90deg,#28658f,#4b9ed2,#28658f);opacity:.75}
+.timeline-tab{appearance:none;border:0;background:transparent;color:#8da6bd;padding:0 5px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;position:relative;z-index:1;font-family:inherit}
+.timeline-tab>span{width:38px;height:38px;display:grid;place-items:center;border:1px solid #376485;border-radius:50%;background:#122338;color:#9bcdf1;font:700 11px "Space Grotesk";box-shadow:0 0 0 5px #0b1220;transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.timeline-tab small{font:600 10px "DM Sans",sans-serif;white-space:nowrap;color:#8299ae;transition:color .2s ease}
+.timeline-tab:hover>span{transform:translateY(-2px);border-color:#69b9ef}
+.timeline-tab.is-active>span{background:linear-gradient(145deg,#268bd2,#245d9e);border-color:#78c6ff;color:#fff;box-shadow:0 0 0 5px #0b1220,0 0 22px #329de055}
+.timeline-tab.is-active small{color:#a9d9ff}
+.timeline-tab:focus-visible{outline:2px solid #79c7ff;outline-offset:5px;border-radius:8px}
+.timeline-panels{min-height:190px}
+.timeline-content{padding:24px 26px;border:1px solid #2b4056;border-radius:12px;background:linear-gradient(145deg,#142235,#101b2a);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;transform-origin:center}
+.timeline-content[hidden]{display:none}
+.timeline-content:hover{transform:scale(1.012);border-color:#477da5;box-shadow:0 12px 28px #0003,0 0 20px #2e91cf12}
+.timeline-content h3{margin:9px 0 8px;color:#edf5fc;font:700 19px "Space Grotesk"}
+.timeline-content p{margin:0;color:#aabbd0;font-size:12px;line-height:1.8;max-width:850px}
+.timeline-content small{display:block;margin-top:14px;color:#8198ae;font-size:10px;line-height:1.7}
+.timeline-content .metric-pills{margin-top:16px}
+@media(max-width:650px){
+ .timeline-track{grid-template-columns:repeat(6,minmax(76px,1fr));overflow-x:auto;overflow-y:hidden;padding:5px 2px 12px;scroll-snap-type:x mandatory}
+ .timeline-track::before{left:38px;right:38px}
+ .timeline-tab{scroll-snap-align:center}
+ .timeline-tab>span{width:34px;height:34px}
+ .timeline-tab small{font-size:9px}
+ .timeline-panels{min-height:220px}
+ .timeline-content{padding:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .version-orb::before{animation:none!important}
+ .timeline-content,.release-panel,.release-panel::after,.release-download-button{transition:none!important}
+ .timeline-content:hover,.release-download-button:hover{transform:none}
+}
+
+
+/* WINVEX website 0.3.10 — restore vertical project timeline */
+.timeline-section{padding-top:78px;padding-bottom:88px}
+.timeline-section .section-heading p{max-width:720px}
+.timeline-section .timeline{position:relative;margin-top:34px;padding-left:54px}
+.timeline-section .timeline:before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#2c83bd,#31506d 75%,transparent)}
+.timeline-section .timeline-item{position:relative;display:grid;grid-template-columns:1fr;gap:0;margin:0 0 18px}
+.timeline-section .timeline-marker{position:absolute;left:-54px;top:20px;width:38px;height:38px;display:grid;place-items:center;border:1px solid #3b759d;border-radius:50%;background:#122338;color:#a9d9ff;font:700 11px "Space Grotesk";box-shadow:0 0 0 5px #0b1220;z-index:1}
+.timeline-section .timeline-content{padding:22px 25px;border:1px solid #2b4056;border-radius:12px;background:linear-gradient(145deg,#142235,#101b2a);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;transform-origin:center}
+.timeline-section .timeline-content:hover{transform:scale(1.012);border-color:#477da5;box-shadow:0 12px 28px #0003,0 0 20px #2e91cf12}
+.timeline-section .timeline-item.timeline-current .timeline-marker{background:linear-gradient(145deg,#268bd2,#245d9e);border-color:#78c6ff;color:#fff;box-shadow:0 0 0 5px #0b1220,0 0 22px #329de055}
+.timeline-section .timeline-content h3{margin:9px 0 8px;color:#edf5fc;font:700 19px "Space Grotesk"}
+.timeline-section .timeline-content p{margin:0;color:#aabbd0;font-size:12px;line-height:1.8;max-width:850px}
+.timeline-section .timeline-content small{display:block;margin-top:14px;color:#8198ae;font-size:10px;line-height:1.7}
+.timeline-section .metric-pills{margin-top:16px}
+@media(max-width:650px){
+ .timeline-section{padding-top:62px;padding-bottom:70px}
+ .timeline-section .timeline{padding-left:42px;margin-top:28px}
+ .timeline-section .timeline:before{left:13px}
+ .timeline-section .timeline-marker{left:-42px;width:28px;height:28px;font-size:9px}
+ .timeline-section .timeline-content{padding:18px}
+ .timeline-section .timeline-content h3{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){.timeline-section .timeline-content{transition:none!important}.timeline-section .timeline-content:hover{transform:none}}
+
+
+/* WINVEX website 0.3.11 — hero download and current-version actions */
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-actions .button{min-height:48px}
+.hero-actions .hero-download{
+  gap:10px;
+  background:linear-gradient(135deg,#268bd2,#3268ba);
+  color:#fff;
+  border:1px solid #398ed0;
+  box-shadow:0 12px 30px #1677c544;
+}
+.hero-actions .hero-download:hover{
+  box-shadow:0 15px 34px #1677c566;
+  filter:brightness(1.06);
+}
+.hero-download svg{
+  width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.hero-actions .button.secondary{
+  background:#111d2b;
+  border:1px solid #344f68;
+}
+@media(max-width:520px){
+  .hero-actions{align-items:stretch}
+  .hero-actions .button{width:100%}
+}
